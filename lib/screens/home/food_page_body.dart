@@ -6,7 +6,7 @@ import 'package:go_foodz/widgets/IconAndTextWidget.dart';
 import 'package:go_foodz/widgets/big_text.dart';
 import 'package:go_foodz/widgets/small%20text.dart';
 
-import '../utils/dimensions.dart';
+import '../../utils/dimensions.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         Container(
-          height: Dimensions.pageView,
+          height: Dimensions.ratio * 290,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -65,6 +65,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         SizedBox(
           height: Dimensions.ratio * 15,
         ),
+        //popular text
         Container(
           margin: EdgeInsets.only(left: Dimensions.ratio * 30),
           child: Row(
@@ -86,58 +87,91 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             ],
           ),
         ),
-        Container(
-          height: 1100,
-          child: ListView.builder(
-              // shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(
-                      left: Dimensions.ratio * 18,
-                      right: Dimensions.ratio * 18,
-                      bottom: Dimensions.ratio * 10),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: Dimensions.ratio * 120,
-                        height: Dimensions.ratio * 120,
+        //list
+        ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.ratio * 18,
+                    right: Dimensions.ratio * 18,
+                    bottom: Dimensions.ratio * 10),
+                child: Row(
+                  children: [
+                    Container(
+                      width: Dimensions.ratio * 120,
+                      height: Dimensions.ratio * 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.ratio * 20),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/food0.jpg"),
+                        ),
+                      ),
+                    ), //image section
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.ratio * 100,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.ratio * 20),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/food0.jpg"),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(Dimensions.ratio * 20),
+                            bottomRight: Radius.circular(Dimensions.ratio * 20),
                           ),
                         ),
-                      ), //image section
-                      Expanded(
-                        child: Container(
-                          height: Dimensions.ratio * 100,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(Dimensions.ratio * 20),
-                              bottomRight:
-                                  Radius.circular(Dimensions.ratio * 20),
-                            ),
-                          ),
+                        child: Padding(
+                          padding: EdgeInsets.all(Dimensions.ratio * 10),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(),
-                              Container(),
-                              Row(),
+                              BigText(text: "The American Cheese Burger"),
+                              SmallText(
+                                  text:
+                                      "With the overflow of cheese and veggies"),
+                              SizedBox(
+                                height: Dimensions.ratio * 2,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  iconsAndTextWidget(
+                                    icon: Icons.circle_sharp,
+                                    iconColor: AppColors.iconColor1,
+                                    text: "Veg",
+                                  ),
+                                  SizedBox(
+                                    width: Dimensions.height10,
+                                  ),
+                                  iconsAndTextWidget(
+                                    icon: Icons.access_time_sharp,
+                                    iconColor: AppColors.iconColor2,
+                                    text: "18 mins",
+                                  ),
+                                  SizedBox(
+                                    width: Dimensions.height10,
+                                  ),
+                                  iconsAndTextWidget(
+                                    icon: Icons.location_on_sharp,
+                                    iconColor: AppColors.mainColor,
+                                    text: "1Kms",
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                );
-              }),
-        )
+                      ),
+                    )
+                  ],
+                ),
+              );
+            })
       ],
     );
   }
@@ -173,7 +207,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       child: Stack(
         children: [
           Container(
-            height: Dimensions.pageViewController,
+            height: Dimensions.ratio * 200,
             margin: EdgeInsets.only(
                 left: Dimensions.ratio * 5, right: Dimensions.ratio * 5),
             decoration: BoxDecoration(
@@ -186,7 +220,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Dimensions.pageViewTextController,
+              height: Dimensions.ratio * 110,
               margin: EdgeInsets.only(
                   left: 35, right: 35, bottom: Dimensions.height15),
               decoration: BoxDecoration(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:go_foodz/home/food_page_body.dart';
 import 'package:go_foodz/utils/colors.dart';
 import 'package:go_foodz/widgets/big_text.dart';
 import 'package:go_foodz/widgets/small%20text.dart';
 
-import '../utils/dimensions.dart';
+import '../../utils/dimensions.dart';
+import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
@@ -22,9 +22,9 @@ class _MainFoodPageState extends State<MainFoodPage> {
           Container(
             child: Container(
               margin: EdgeInsets.only(
-                  top: Dimensions.ratio * 35, bottom: Dimensions.ratio * 15),
+                  top: Dimensions.ratio * 30, bottom: Dimensions.ratio * 8),
               padding: EdgeInsets.only(
-                  left: Dimensions.ratio * 20, right: Dimensions.ratio * 20),
+                  left: Dimensions.ratio * 18, right: Dimensions.ratio * 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,7 +59,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
               ),
             ),
           ),
-          Expanded(child: SingleChildScrollView(child: FoodPageBody(),),),
+          Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            ),
+          ),
         ],
       ),
     );
