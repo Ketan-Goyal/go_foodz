@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:go_foodz/utils/dimensions.dart';
 
 class BigText extends StatelessWidget {
   Color? color;
@@ -10,7 +11,7 @@ class BigText extends StatelessWidget {
       {Key? key,
       this.color = const Color(0xFF332d2d),
       required this.text,
-      this.size = 20,
+      this.size = 0,
       this.overflow = TextOverflow.ellipsis})
       : super(key: key);
 
@@ -23,7 +24,7 @@ class BigText extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontFamily: 'roboto',
-        fontSize: size,
+        fontSize: size == 0 ? Dimensions.font20 : size,
         fontWeight: FontWeight.w400,
       ),
     );
