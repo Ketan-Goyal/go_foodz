@@ -63,7 +63,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         SizedBox(
-          height: Dimensions.ratio * 30,
+          height: Dimensions.ratio * 15,
         ),
         Container(
           margin: EdgeInsets.only(left: Dimensions.ratio * 30),
@@ -87,37 +87,52 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         Container(
-          height: 500,
+          height: 1100,
           child: ListView.builder(
-              shrinkWrap: true,
-              physics: AlwaysScrollableScrollPhysics(),
+              // shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(
                       left: Dimensions.ratio * 18,
-                      right: Dimensions.ratio * 18),
+                      right: Dimensions.ratio * 18,
+                      bottom: Dimensions.ratio * 10),
                   child: Row(
                     children: [
                       Container(
-                        width: Dimensions.ratio * 100,
-                        height: Dimensions.ratio * 100,
+                        width: Dimensions.ratio * 120,
+                        height: Dimensions.ratio * 120,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius:
                               BorderRadius.circular(Dimensions.ratio * 20),
                           image: DecorationImage(
+                            fit: BoxFit.cover,
                             image: AssetImage("assets/images/food0.jpg"),
                           ),
                         ),
-                      ),
-                      Column(
-                        children: [
-                          Container(),
-                          Container(),
-                          Row(),
-                        ],
-                      ),
+                      ), //image section
+                      Expanded(
+                        child: Container(
+                          height: Dimensions.ratio * 100,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.ratio * 20),
+                              bottomRight:
+                                  Radius.circular(Dimensions.ratio * 20),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(),
+                              Container(),
+                              Row(),
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 );
