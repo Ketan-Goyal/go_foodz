@@ -45,15 +45,18 @@ class PopularFoodDetails extends StatelessWidget {
           Positioned(
             left: 0,
             right: 0,
-            top: (Dimensions.ratio * 300) - 20,
+            top: Dimensions.ratio * 260,
+            bottom: 0,
             child: Container(
               padding: EdgeInsets.only(
                   left: Dimensions.ratio * 20,
                   right: Dimensions.ratio * 20,
                   top: Dimensions.height20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.rad20),
-              ),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(Dimensions.rad20),
+                      topLeft: Radius.circular(Dimensions.rad20)),
+                  color: Colors.white),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -120,7 +123,7 @@ class PopularFoodDetails extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
