@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_foodz/utils/dimensions.dart';
+import 'package:go_foodz/widgets/app_Column.dart';
 import 'package:go_foodz/widgets/app_icon.dart';
+import 'package:go_foodz/widgets/big_text.dart';
+import 'package:go_foodz/widgets/expandable_text_widget.dart';
 
 import '../../utils/colors.dart';
-import '../../widgets/IconAndTextWidget.dart';
-import '../../widgets/big_text.dart';
-import '../../widgets/small text.dart';
 
 class PopularFoodDetails extends StatelessWidget {
   const PopularFoodDetails({Key? key}) : super(key: key);
@@ -14,6 +13,7 @@ class PopularFoodDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -60,71 +60,88 @@ class PopularFoodDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BigText(text: "Pindi Chhole Bhature"),
-                  SizedBox(height: Dimensions.height10),
-                  Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Wrap(
-                        children: List.generate(
-                          5,
-                          (index) => Icon(
-                            Icons.star,
-                            color: AppColors.mainColor,
-                            size: Dimensions.ratio * 15,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: Dimensions.height10,
-                      ),
-                      SmallText(
-                        text: "4.5",
-                      ),
-                      SizedBox(
-                        width: Dimensions.height10,
-                      ),
-                      SmallText(text: "1287"),
-                      SizedBox(
-                        width: Dimensions.height10,
-                      ),
-                      SmallText(text: "comments"),
-                    ],
+                  AppColumn(
+                    text: "Pindi Chhole Bhature",
                   ),
                   SizedBox(
                     height: Dimensions.height20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      iconsAndTextWidget(
-                        icon: Icons.circle_sharp,
-                        iconColor: AppColors.iconColor1,
-                        text: "Veg",
+                  BigText(
+                    text: "Description",
+                  ),
+                  SizedBox(
+                    height: Dimensions.height10,
+                  ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: ExpandableTextWidget(
+                        text:
+                            "Chole bhature (Hindi: छोले भटूरे) is a food dish popular in the Northern areas of the Indian subcontinent.[1] It is a combination of chana masala (spicy white chickpeas) and bhatura/puri, a fried bread made from maida.[2][3] Although it is known as a typical Punjabi dish,[4] there are varied claims around the origin of dish. Chole bhature is often eaten as a breakfast dish, sometimes accompanied with lassi. It can also be street food or a complete meal and may be accompanied with onions, pickled carrots, green chutney or achaar.[5] Chole bhature (Hindi: छोले भटूरे) is a food dish popular in the Northern areas of the Indian subcontinent.[1] It is a combination of chana masala (spicy white chickpeas) and bhatura/puri, a fried bread made from maida.[2][3] Although it is known as a typical Punjabi dish,[4] there are varied claims around the origin of dish. Chole bhature is often eaten as a breakfast dish, sometimes accompanied with lassi. It can also be street food or a complete meal and may be accompanied with onions, pickled carrots, green chutney or achaar.[5] Chole bhature (Hindi: छोले भटूरे) is a food dish popular in the Northern areas of the Indian subcontinent.[1] It is a combination of chana masala (spicy white chickpeas) and bhatura/puri, a fried bread made from maida.[2][3] Although it is known as a typical Punjabi dish,[4] there are varied claims around the origin of dish. Chole bhature is often eaten as a breakfast dish, sometimes accompanied with lassi. It can also be street food or a complete meal and may be accompanied with onions, pickled carrots, green chutney or achaar.[5] Chole bhature (Hindi: छोले भटूरे) is a food dish popular in the Northern areas of the Indian subcontinent.[1] It is a combination of chana masala (spicy white chickpeas) and bhatura/puri, a fried bread made from maida.[2][3] Although it is known as a typical Punjabi dish,[4] there are varied claims around the origin of dish. Chole bhature is often eaten as a breakfast dish, sometimes accompanied with lassi. It can also be street food or a complete meal and may be accompanied with onions, pickled carrots, green chutney or achaar.[5]",
                       ),
-                      SizedBox(
-                        width: Dimensions.height10,
-                      ),
-                      iconsAndTextWidget(
-                        icon: Icons.access_time_sharp,
-                        iconColor: AppColors.iconColor2,
-                        text: "32 mins",
-                      ),
-                      SizedBox(
-                        width: Dimensions.height10,
-                      ),
-                      iconsAndTextWidget(
-                        icon: Icons.location_on_sharp,
-                        iconColor: AppColors.mainColor,
-                        text: "2Kms",
-                      ),
-                    ],
+                    ),
                   )
                 ],
               ),
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: Dimensions.ratio * 100,
+        padding: EdgeInsets.only(
+            top: Dimensions.ratio * 24,
+            bottom: Dimensions.ratio * 24,
+            left: Dimensions.ratio * 16,
+            right: Dimensions.ratio * 16),
+        decoration: BoxDecoration(
+          color: AppColors.buttonbackgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.ratio * 32),
+            topRight: Radius.circular(Dimensions.ratio * 32),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.all(Dimensions.ratio * 16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(Dimensions.ratio * 16),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.remove,
+                    color: AppColors.signColor,
+                  ),
+                  SizedBox(
+                    width: Dimensions.ratio * 5,
+                  ),
+                  BigText(text: "0"),
+                  SizedBox(
+                    width: Dimensions.ratio * 5,
+                  ),
+                  Icon(
+                    Icons.add,
+                    color: AppColors.signColor,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(Dimensions.ratio * 16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.ratio * 16),
+                color: AppColors.mainColor,
+              ),
+              child: BigText(
+                text: " \$10 | Add to cart",
+                color: Colors.white,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

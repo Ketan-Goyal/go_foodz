@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_foodz/utils/colors.dart';
 import 'package:go_foodz/widgets/IconAndTextWidget.dart';
+import 'package:go_foodz/widgets/app_Column.dart';
 import 'package:go_foodz/widgets/big_text.dart';
 import 'package:go_foodz/widgets/small%20text.dart';
 
@@ -247,70 +248,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     left: Dimensions.ratio * 15,
                     right: Dimensions.ratio * 15,
                     top: Dimensions.ratio * 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "The Classic Pizza"),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                            5,
-                            (index) => Icon(
-                              Icons.star,
-                              color: AppColors.mainColor,
-                              size: Dimensions.ratio * 15,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: Dimensions.height10,
-                        ),
-                        SmallText(
-                          text: "4.5",
-                        ),
-                        SizedBox(
-                          width: Dimensions.height10,
-                        ),
-                        SmallText(text: "1287"),
-                        SizedBox(
-                          width: Dimensions.height10,
-                        ),
-                        SmallText(text: "comments"),
-                      ],
-                    ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        iconsAndTextWidget(
-                          icon: Icons.circle_sharp,
-                          iconColor: AppColors.iconColor1,
-                          text: "Veg",
-                        ),
-                        SizedBox(
-                          width: Dimensions.height10,
-                        ),
-                        iconsAndTextWidget(
-                          icon: Icons.access_time_sharp,
-                          iconColor: AppColors.iconColor2,
-                          text: "32 mins",
-                        ),
-                        SizedBox(
-                          width: Dimensions.height10,
-                        ),
-                        iconsAndTextWidget(
-                          icon: Icons.location_on_sharp,
-                          iconColor: AppColors.mainColor,
-                          text: "2Kms",
-                        ),
-                      ],
-                    )
-                  ],
+                child: AppColumn(
+                  text: "American Cheese Burger",
                 ),
               ),
             ),
