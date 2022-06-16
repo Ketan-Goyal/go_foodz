@@ -18,7 +18,7 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
   late String hiddenHalf;
 
   bool hiddenText = true;
-  double textHeight = Dimensions.screenHeight / 8;
+  double textHeight = Dimensions.screenHeight / 5;
 
   @override
   void initState() {
@@ -60,7 +60,7 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
                     child: Row(
                       children: [
                         SmallText(
-                          text: hiddenText ? ("Show More ") : ("Hide"),
+                          text: hiddenText ? ("Show More ") : ("Show Less"),
                           color: AppColors.mainColor,
                           size: Dimensions.ratio * 15,
                         ),
