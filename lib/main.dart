@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_foodz/data/controllers/popular_product_controller.dart';
 import 'package:go_foodz/helper/dependencies.dart' as dep;
 import 'package:go_foodz/screens/food/Recommended_food_details.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.find<PopularProductController>().getPopularProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
