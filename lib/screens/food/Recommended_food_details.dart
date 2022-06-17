@@ -125,24 +125,9 @@ class RecommendedFoodDetalis extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(Dimensions.ratio * 16),
                   ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.remove,
-                        color: AppColors.signColor,
-                      ),
-                      SizedBox(
-                        width: Dimensions.ratio * 5,
-                      ),
-                      BigText(text: "0"),
-                      SizedBox(
-                        width: Dimensions.ratio * 5,
-                      ),
-                      Icon(
-                        Icons.add,
-                        color: AppColors.signColor,
-                      )
-                    ],
+                  child: Icon(
+                    Icons.star,
+                    color: AppColors.mainColor,
                   ),
                 ),
                 Container(
