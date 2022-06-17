@@ -75,21 +75,90 @@ class RecommendedFoodDetalis extends StatelessWidget {
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AppIcon(
-                icon: Icons.remove,
-                backgroundColor: AppColors.mainColor,
-                iconColor: Colors.white,
+          Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: Dimensions.ratio * 50,
+                vertical: Dimensions.ratio * 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppIcon(
+                  icon: Icons.remove,
+                  backgroundColor: AppColors.mainColor,
+                  iconColor: Colors.white,
+                  iconSize: Dimensions.ratio * 24,
+                ),
+                BigText(
+                  text: "₹179 " + " X " + " 0",
+                  color: AppColors.mainBlackColor,
+                  size: Dimensions.ratio * 26,
+                ),
+                AppIcon(
+                  icon: Icons.add,
+                  backgroundColor: AppColors.mainColor,
+                  iconColor: Colors.white,
+                  iconSize: Dimensions.ratio * 24,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: Dimensions.ratio * 90,
+            padding: EdgeInsets.only(
+                top: Dimensions.ratio * 16,
+                bottom: Dimensions.ratio * 16,
+                left: Dimensions.ratio * 16,
+                right: Dimensions.ratio * 16),
+            decoration: BoxDecoration(
+              color: AppColors.buttonbackgroundColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.ratio * 32),
+                topRight: Radius.circular(Dimensions.ratio * 32),
               ),
-              AppIcon(
-                icon: Icons.add,
-                backgroundColor: AppColors.mainColor,
-                iconColor: Colors.white,
-              ),
-            ],
-          )
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(Dimensions.ratio * 16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(Dimensions.ratio * 16),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.remove,
+                        color: AppColors.signColor,
+                      ),
+                      SizedBox(
+                        width: Dimensions.ratio * 5,
+                      ),
+                      BigText(text: "0"),
+                      SizedBox(
+                        width: Dimensions.ratio * 5,
+                      ),
+                      Icon(
+                        Icons.add,
+                        color: AppColors.signColor,
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(Dimensions.ratio * 16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Dimensions.ratio * 16),
+                    color: AppColors.mainColor,
+                  ),
+                  child: BigText(
+                    text: " ₹179 | Add to cart",
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
