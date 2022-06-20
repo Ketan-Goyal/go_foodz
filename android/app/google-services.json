@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "283622304387",
+    "project_id": "gofoodzex",
+    "storage_bucket": "gofoodzex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283622304387:android:d2799c4d4079664e4789b6",
+        "android_client_info": {
+          "package_name": "com.example.go_foodz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283622304387-8rb84ob3f3v4tdresdv4j2loltpcjuaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSz0vO9qJWnZg9VnbEColGuwDbV6SR16I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283622304387-8rb84ob3f3v4tdresdv4j2loltpcjuaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
