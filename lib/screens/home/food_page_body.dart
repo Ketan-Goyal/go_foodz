@@ -36,11 +36,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   void dispose() {
     pageController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     print("curr height is " + MediaQuery.of(context).size.height.toString());
+    print("curr height is " + MediaQuery.of(context).size.width.toString());
     return Column(
       children: [
         Container(
@@ -102,8 +104,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 child: Row(
                   children: [
                     Container(
-                      width: Dimensions.ratio * 120,
-                      height: Dimensions.ratio * 120,
+                      width: Dimensions.ratio * 110,
+                      height: Dimensions.ratio * 110,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
@@ -146,16 +148,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                     iconColor: AppColors.iconColor1,
                                     text: "Veg",
                                   ),
-                                  SizedBox(
-                                    width: Dimensions.height10,
-                                  ),
                                   iconsAndTextWidget(
                                     icon: Icons.access_time_sharp,
                                     iconColor: AppColors.iconColor2,
                                     text: "18 mins",
-                                  ),
-                                  SizedBox(
-                                    width: Dimensions.height10,
                                   ),
                                   iconsAndTextWidget(
                                     icon: Icons.location_on_sharp,

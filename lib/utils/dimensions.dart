@@ -4,6 +4,7 @@ class Dimensions {
   static double screenHeight = Get.context!.height;
   static double screenWidth = Get.context!.width;
   static double ratio = screenHeight / 715;
+  static double ratiow = screenWidth / 411;
   static double iconSize = screenHeight / 29.79;
 
   static double pageViewController = screenHeight / 3.25;

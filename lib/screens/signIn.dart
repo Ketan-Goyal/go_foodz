@@ -13,7 +13,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  AuthMethods _authMethods = new AuthMethods();
+  final AuthMethods _authMethods = AuthMethods();
 
   TextEditingController passwordTEC = TextEditingController();
   TextEditingController emailTEC = TextEditingController();
@@ -102,7 +102,7 @@ class _SignInState extends State<SignIn> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(context,
+                  Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SignUp()));
                 },
                 child: Container(

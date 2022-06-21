@@ -1,13 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_foodz/screens/home/main%20food%20page.dart';
-import 'package:go_foodz/screens/signIn.dart';
 import 'package:go_foodz/services/Auth.dart';
 import 'package:go_foodz/utils/colors.dart';
 import 'package:go_foodz/utils/dimensions.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+  const SignUp({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -157,8 +158,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => SignIn()));
+                        Navigator.pop(context);
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 10),
