@@ -221,7 +221,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Dimensions.ratio * 110,
+              height: Dimensions.ratio * 120,
               margin: EdgeInsets.only(
                   left: 35, right: 35, bottom: Dimensions.height15),
               decoration: BoxDecoration(
@@ -249,7 +249,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     right: Dimensions.ratio * 15,
                     top: Dimensions.ratio * 15),
                 child: AppColumn(
-                  text: "American Cheese Burger",
+                  text: "The Classic Pizza",
                 ),
               ),
             ),

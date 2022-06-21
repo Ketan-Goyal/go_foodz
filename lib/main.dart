@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:go_foodz/screens/signUp.dart';
+import 'package:go_foodz/screens/signIn.dart';
 
 import 'firebase_options.dart';
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
       ),
       // home: MainFoodPage(),
-      home: SignUp(),
+      home: SignIn(),
     );
   }
 }

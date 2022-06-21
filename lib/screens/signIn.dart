@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_foodz/screens/home/main%20food%20page.dart';
+import 'package:go_foodz/screens/signUp.dart';
+import 'package:go_foodz/services/Auth.dart';
 import 'package:go_foodz/utils/colors.dart';
 import 'package:go_foodz/utils/dimensions.dart';
 
@@ -10,6 +13,11 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  AuthMethods _authMethods = new AuthMethods();
+
+  TextEditingController passwordTEC = TextEditingController();
+  TextEditingController emailTEC = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +34,13 @@ class _SignInState extends State<SignIn> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
+                controller: emailTEC,
+                validator: (v) {
+                  return RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+                          .hasMatch(v!)
+                      ? null
+                      : "enter valid email";
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20)),
@@ -36,6 +51,7 @@ class _SignInState extends State<SignIn> {
                 height: 20,
               ),
               TextFormField(
+                controller: passwordTEC,
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -55,16 +71,24 @@ class _SignInState extends State<SignIn> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                width: double.maxFinite,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(
-                  color: AppColors.mainColor,
-                  borderRadius: BorderRadius.circular(20),
+              GestureDetector(
+                onTap: () {
+                  _authMethods.SignInWithEmailPassword(
+                      emailTEC.text, passwordTEC.text);
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => MainFoodPage()));
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  width: double.maxFinite,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    color: AppColors.mainColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text("SIGN IN"),
                 ),
-                child: Text("SIGN IN"),
               ),
               Container(
                 width: double.maxFinite,
@@ -76,10 +100,16 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: Text("SIGN IN WITH GOOGLE"),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text("New User? Sign Up Now"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => SignUp()));
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text("New User? Sign Up Now"),
+                ),
               ),
             ],
           ),

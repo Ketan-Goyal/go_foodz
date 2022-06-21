@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:go_foodz/screens/home/main%20food%20page.dart';
+import 'package:go_foodz/screens/signIn.dart';
 import 'package:go_foodz/services/Auth.dart';
 import 'package:go_foodz/utils/colors.dart';
 import 'package:go_foodz/utils/dimensions.dart';
@@ -30,6 +32,8 @@ class _SignUpState extends State<SignUp> {
         if (kDebugMode) {
           print("$val");
         }
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => MainFoodPage()));
       });
     }
   }
@@ -62,7 +66,7 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           TextFormField(
                             validator: (v) {
-                              return v!.length > 10 || v.length < 5 || v.isEmpty
+                              return v!.length > 20 || v.length < 5 || v.isEmpty
                                   ? "Invalid username"
                                   : null;
                             },
@@ -151,10 +155,16 @@ class _SignUpState extends State<SignUp> {
                       ),
                       child: Text("SIGN UP WITH GOOGLE"),
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      child: Text("Already a User? Sign in Now"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => SignIn()));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Text("Already a User? Sign in Now"),
+                      ),
                     ),
                   ],
                 ),
